@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+    40% {
+    transform: translateY(-10px);
+    }
+    60% {
+    transform: translateY(-5px);
+    }
+}
+
+:root {
+    --cor-primaria: rgb(60, 99, 168);
+    --branco: whitesmoke;
+}
+
+::selection {
+    background: var(--cor-primaria);
+    color: white;
+  }
+  
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: #000;
+    background-image: radial-gradient(circle at top right, rgba(121, 68, 154, 0.13), transparent),
+    radial-gradient(circle at 20% 80%, rgba(34, 141, 183, 0.13), transparent)
+}
+canvas {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+}
+
+.main {
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main p {
+    color: var(--branco);
+    font-size: 1.75em;
+}
+
+
+.main h1 {
+    color: #000000;
+    font-size: 4em;
+    -webkit-text-stroke: 2px var(--branco);
+    letter-spacing: 4px;
+    line-height: 0px;
+    text-align: center;
+}
+
+.socialmedias {
+    display: flex;
+    gap: 20px;
+    color: var(--branco);
+}
+
+.socialmedias .circle {
+    border: 2px solid var(--branco);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+#circle1 {
+    animation: bounce 2s infinite 0s;
+}
+
+#circle2 {
+    animation: bounce 2s infinite 1s;
+}
+
+.socialmedias .circle:hover {
+    cursor:  pointer;
+}
+
+.button-cv {
+    height: 50px;
+    width: 200px;
+    border-radius: 15px;
+    background-color: transparent;
+    border: 2px solid var(--branco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    text-align: center; 
+    color: var(--branco);
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    transition: 0.4s;
+}
+
+.button-cv:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px 10px var(--cor-primaria);
+  }
+  
