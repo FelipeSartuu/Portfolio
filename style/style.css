@@ -31,49 +31,62 @@
 
 body {
     width: 100%;
-    height: 100vh;
+    max-height: 100vh;
     overflow-x: hidden;
     background-color: #000;
     background-image: radial-gradient(circle at top right, rgba(121, 68, 154, 0.13), transparent),
-    radial-gradient(circle at 20% 80%, rgba(34, 141, 183, 0.13), transparent)
+    radial-gradient(circle at 20% 80%, rgba(34, 141, 183, 0.13), transparent);
+    background-repeat: no-repeat;
 }
+
 canvas {
-    position: fixed;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    z-index: 0;
+    pointer-events: none;
 }
 
 main {
+    position: relative;
     width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     font-family: "Poppins", sans-serif;
 }
 
 .main {
-    height: 300px;
+    height: 100vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    overflow: hidden;
+}
+
+.main-container {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 300px;
 }
 
 .main p {
     color: var(--branco);
-    font-size: 1.75em;
+    font-size: 1.5em;
+    z-index: 1;
+    font-weight: bold;
 }
 
 
 .main h1 {
     color: #000000;
-    font-size: 4em;
+    font-size: 4.5em;
     -webkit-text-stroke: 2px var(--branco);
     letter-spacing: 4px;
-    line-height: 0px;
     text-align: center;
+    z-index: 1;
+    line-height: 0px;
 }
 
 .socialmedias {
@@ -83,10 +96,9 @@ main {
 }
 
 .socialmedias .circle {
-    border: 2px solid var(--branco);
     width: 45px;
-    height: 45px;
     border-radius: 50%;
+    height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,10 +111,13 @@ main {
 
 #circle2 {
     animation: bounce 2s infinite 1s;
+    border-radius: 10px;
 }
 
 .socialmedias .circle:hover {
     cursor:  pointer;
+    box-shadow: 0 0 15px 10px var(--cor-primaria);
+    border: 2px solid var(--branco)
 }
 
 .button-cv {
@@ -121,6 +136,7 @@ main {
     font-size: 1em;
     font-weight: bold;
     transition: 0.4s;
+    z-index: 1;
 }
 
 .button-cv:hover {
@@ -129,3 +145,60 @@ main {
     box-shadow: 0 0 20px 10px var(--cor-primaria);
   }
   
+
+/*Projetos Section*/
+
+.projects {
+    min-height: 200vh;   
+}
+
+.projects-title {
+    margin-top: 60px;
+    text-align: center
+}
+
+.projects-title h2 {
+    font-size: 2em;
+    letter-spacing: 1px;
+    color: var(--branco);
+}
+
+.projects-title p { 
+    color: var(--branco);
+    margin-top: 10px;
+    font-size: 0.8em;
+}
+
+.projects-container {
+    margin-top: 50px;
+    display: grid;
+    padding: 0px 60px 0px 60px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 500px 500px;
+    gap: 100px;
+}
+
+.project-container {
+    border: 3px solid #fff;
+    text-decoration: none;
+}
+
+.project-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.project-image img {
+    height: 360px;
+    width: 640px;
+}
+
+.project-text {
+    text-align: center;
+}
+
+.project-text h3 {
+    color: var(--branco);
+}

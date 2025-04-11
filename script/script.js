@@ -1,8 +1,11 @@
 const STAR_COLOR = '#ffffff6e';
-        const STAR_SIZE = 2;
-        const STAR_MIN_SCALE = 0.4;
+        const STAR_SIZE = 3;
+        const STAR_MIN_SCALE = 0.1;
         const OVERFLOW_THRESHOLD = 50;
-        const STAR_COUNT = ( window.innerWidth + window.innerHeight ) / 16;
+        const main = document.querySelector('.main');
+        const mainRect = main.getBoundingClientRect();
+        const STAR_COUNT = ( mainRect.width + mainRect.height ) / 12;
+
 
         const canvas = document.querySelector( 'canvas' ),
             context = canvas.getContext( '2d' );
@@ -25,10 +28,11 @@ const STAR_COLOR = '#ffffff6e';
         step();
 
         window.onresize = resize;
-        canvas.onmousemove = onMouseMove;
-        canvas.ontouchmove = onTouchMove;
-        canvas.ontouchend = onMouseLeave;
-        document.onmouseleave = onMouseLeave;
+        main.addEventListener('mousemove', onMouseMove);
+        main.addEventListener('touchmove', onTouchMove);
+        main.addEventListener('touchend', onMouseLeave);
+        main.addEventListener('mouseleave', onMouseLeave);
+        
 
         function generate() {
 
@@ -101,18 +105,20 @@ const STAR_COLOR = '#ffffff6e';
         }
 
         function resize() {
-
             scale = window.devicePixelRatio || 1;
-
-            width = window.innerWidth * scale;
-            height = window.innerHeight * scale;
-
+        
+            const rect = main.getBoundingClientRect();
+            width = rect.width * scale;
+            height = rect.height * scale;
+        
             canvas.width = width;
             canvas.height = height;
-
-            stars.forEach( placeStar );
-
+            canvas.style.width = rect.width + 'px';
+            canvas.style.height = rect.height + 'px';
+        
+            stars.forEach(placeStar);
         }
+        
 
         function step() {
 
