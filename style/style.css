@@ -154,7 +154,7 @@ main {
 
 .projects-title {
     margin-top: 60px;
-    text-align: center
+    text-align: center;
 }
 
 .projects-title h2 {
@@ -170,11 +170,10 @@ main {
 }
 
 .projects-container {
-    margin-top: 50px;
+    margin-top: 100px;
     display: grid;
     padding: 0px 60px 0px 60px;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 500px 500px;
     gap: 100px;
 }
 
@@ -188,17 +187,43 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 30px 10px;
+}
+
+.project-image {
+    width: 640px;
 }
 
 .project-image img {
-    height: 360px;
-    width: 640px;
+    width: 100%;
 }
 
 .project-text {
     text-align: center;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-around;
 }
 
 .project-text h3 {
     color: var(--branco);
+    font-size: 1.5em;
+}
+
+.project-text p {
+    max-width: 550px;
+}
+
+.project-techs {
+    margin-top: 30px;
+}
+
+.project-techs img {
+ width: 32px;
+ transition: 0.3s;
+}
+
+.project-techs img:hover {
+    transform: translateY(-5px);
 }
