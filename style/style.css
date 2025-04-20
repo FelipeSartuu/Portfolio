@@ -304,7 +304,7 @@ main {
 
 .profile-image-container img {
     width: 400px;
-    filter: invert();
+    height: 400px;
     border-radius: 50%;
     border: 3px solid #ccc;
 }
@@ -322,6 +322,10 @@ main {
 
 @media (max-width: 769px) {
 
+    canvas {
+        display: none;
+    }
+    
     .projects-container {
         grid-template-columns:  1fr; 
     }
@@ -379,6 +383,7 @@ main {
 
     .profile-image-container img {
         width: 250px;
+        height: 250px;
     }
 
     .profile-container {
