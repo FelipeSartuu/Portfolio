@@ -324,6 +324,7 @@ main {
 
     canvas {
         display: none;
+        z-index: -10;
     }
     
     .projects-container {
